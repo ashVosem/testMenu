@@ -170,6 +170,10 @@ a {
     left: 0;
     top: 0;
     opacity: 0;
+    @media screen and(max-width: 700px) {
+      margin-top: 0;
+      height: 100vh;
+    }
   }
 
   &.not_mobile:hover::after {
