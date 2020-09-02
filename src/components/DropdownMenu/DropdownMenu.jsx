@@ -5,7 +5,7 @@ import { useCallback } from "react";
 import { useLayoutEffect } from "react";
 import { useRef } from "react";
 
-const DropdownMenu = ({ isDataShouldBeShown, isMobile, index }) => {
+const DropdownMenu = ({ activeNavElem, isMobile, index }) => {
   const [isSubDataShouldBeShown, setIsSubDataShouldBeShown] = useState(false);
   const [activeSubNavElem, setActiveSubNavElem] = useState(null);
 
@@ -29,11 +29,9 @@ const DropdownMenu = ({ isDataShouldBeShown, isMobile, index }) => {
   );
 
   useLayoutEffect(() => {
-    if (!isDataShouldBeShown) {
-      setIsSubDataShouldBeShown(false);
-      setActiveSubNavElem(null);
-    }
-  }, [isDataShouldBeShown]);
+    setIsSubDataShouldBeShown(false);
+    setActiveSubNavElem(null);
+  }, [activeNavElem]);
 
   return (
     <div className={isMobile ? "data_on_hover_mobile" : "data_on_hover"}>

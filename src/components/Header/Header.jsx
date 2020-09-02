@@ -137,7 +137,7 @@ const Header = () => {
                 <DropdownMenu
                   key={"dropdown" + index}
                   index={index}
-                  isDataShouldBeShown={isDataShouldBeShown}
+                  activeNavElem={activeNavElem}
                   isMobile={isMobile}
                 />
               )}
